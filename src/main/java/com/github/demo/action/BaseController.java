@@ -36,7 +36,7 @@ public class BaseController {
 	@RequestMapping("/json")
 	@ResponseBody
 	public Page<User> testJson(){
-		log.info("¿ªÊ¼Ö´ÐÐ·½·¨");
+		log.info("å¼€å§‹");
 		Page<User> page = userService.queryUserByPage(1,2);
 		return page;
 	}

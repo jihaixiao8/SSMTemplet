@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User queryUserById(Long id) {
 		if(id == null){
-			logger.info("用户Id为空,方法退出");
+			logger.info("鐢ㄦ埛id涓虹┖");
 			return null;
 		}
 		return userMapper.findById(id);
