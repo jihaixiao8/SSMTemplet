@@ -36,5 +36,25 @@ public class UserServiceImpl implements UserService{
 		Page<User> page = userMapper.findByPage();
 		return page;
 	}
+
+	@Override
+	public Long addUser(User user) {
+		if(user == null){
+			logger.info("user为空，退出");
+			return null;
+		}
+		userMapper.insert(user);
+		return user.getId();
+	}
+
+	@Override
+	public boolean updateUser(User user) {
+		if(user == null){
+			logger.info("user为空，更新失败");
+			return false;
+		}
+		int result = userMapper.update(user);
+		return result > 0;
+	}
 	
 }

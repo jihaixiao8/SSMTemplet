@@ -7,18 +7,32 @@ import com.github.pagehelper.Page;
 public interface UserService {
 	
 	/**
-	 * ¸ù¾İid²éÑ¯ÓÃ»§ĞÅÏ¢ÏêÇé
+	 * æ ¹æ®IdæŸ¥è¯¢æœ‰æ•ˆç”¨æˆ·
 	 * @param id
 	 * @return
 	 */
 	public User queryUserById(Long id);
 	
 	/**
-	 * ·ÖÒ³²éÑ¯ÓÃ»§ĞÅÏ¢
-	 * @param pageNo  Ò³Êı
-	 * @param pageSize  Ò³´óĞ¡
+	 * åˆ†é¡µæŸ¥è¯¢ç”¨æˆ·
+	 * @param pageNo  é¡µæ•°
+	 * @param pageSize  é¡µå¤§å°
 	 * @return
 	 */
 	public Page<User> queryUserByPage(int pageNo,int pageSize);
+	
+	/**
+	 * æ·»åŠ æ–°ç”¨æˆ·
+	 * @param user
+	 * @return  æ–°å¢ç”¨æˆ·çš„id
+	 */
+	public Long addUser(User user);
+	
+	/**
+	 * ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯
+	 * @param user
+	 * @return
+	 */
+	public boolean updateUser(User user);
 	
 }

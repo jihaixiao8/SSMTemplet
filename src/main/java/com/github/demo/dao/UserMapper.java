@@ -8,7 +8,7 @@ import com.github.pagehelper.Page;
 public interface UserMapper {
 	
 	/**
-	 * 根据id查询用户
+	 * 鏍规嵁id鏌ヨUser
 	 * @param id
 	 * @return
 	 * @throws DataAccessException
@@ -16,10 +16,26 @@ public interface UserMapper {
 	public User findById(long id) throws DataAccessException;
 	
 	/**
-	 * 分页查询用户信息
+	 * 鍒嗛〉鏌ヨUser璇︽儏
 	 * @return
 	 * @throws DataAccessException
 	 */
 	public Page<User> findByPage() throws DataAccessException;
+		
+	/**
+	 * 鏇存柊鐢ㄦ埛淇℃伅
+	 * @param user
+	 * @return
+	 * @throws DataAccessException
+	 */
+	public int update(User user) throws DataAccessException;
+	
+	/**
+	 * 鎻掑叆鐢ㄦ埛淇℃伅
+	 * @param user
+	 * @return
+	 * @throws DataAccessException
+	 */
+	public int insert(User user) throws DataAccessException;
 
 }

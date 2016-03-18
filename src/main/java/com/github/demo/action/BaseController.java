@@ -41,4 +41,26 @@ public class BaseController {
 		return page;
 	}
 	
+	@RequestMapping("/insert")
+	@ResponseBody
+	public Long insert(){
+		log.info("开始插入数据");
+		User user = new User();
+		user.setUsername("liubao");
+		user.setPassword("12344");
+		user.setMobile("15233311211");
+		user.setStatus(1);
+		Long id = userService.addUser(user);
+		return id;
+	}
+	
+	@RequestMapping("/update")
+	@ResponseBody
+	public boolean update(){
+		log.info("开始插入数据");
+		User user = userService.queryUserById(7L);
+		user.setStatus(0);
+		boolean result = userService.updateUser(user);
+		return result;
+	}
 }
