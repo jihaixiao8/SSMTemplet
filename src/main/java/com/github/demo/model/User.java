@@ -2,25 +2,75 @@ package com.github.demo.model;
 
 public class User {
 	
-	private String name;
+	private Long id;
 	
-	private String sex;
+	private String username;
+	
+	private String password;
 
-	public String getName() {
-		return name;
+	private String mobile;
+	
+	private int type;
+	
+	private int status;
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getSex() {
-		return sex;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setSex(String sex) {
-		this.sex = sex;
+	public void setUsername(String username) {
+		this.username = username;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password="
+				+ password + ", mobile=" + mobile + ", type=" + type
+				+ ", status=" + status + "]";
+	}
+	
+	
+	
 	
 	
 	
