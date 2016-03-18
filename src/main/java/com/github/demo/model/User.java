@@ -1,5 +1,7 @@
 package com.github.demo.model;
 
+import java.util.Date;
+
 public class User {
 	
 	private Long id;
@@ -13,6 +15,10 @@ public class User {
 	private int type;
 	
 	private int status;
+	
+	private Date createTime;
+	
+	private Date modifiedTime;
 
 	public Long getId() {
 		return id;
@@ -61,17 +67,29 @@ public class User {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getModifiedTime() {
+		return modifiedTime;
+	}
+
+	public void setModifiedTime(Date modifiedTime) {
+		this.modifiedTime = modifiedTime;
+	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password="
 				+ password + ", mobile=" + mobile + ", type=" + type
-				+ ", status=" + status + "]";
+				+ ", status=" + status + ", createTime=" + createTime
+				+ ", modifiedTime=" + modifiedTime + "]";
 	}
-	
-	
-	
-	
-	
 	
 }

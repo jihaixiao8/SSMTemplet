@@ -7,11 +7,12 @@ import com.github.pagehelper.Page;
 public interface UserService {
 	
 	/**
-	 * 根据Id查询有效用户
+	 * 根据id查询用户信息
 	 * @param id
+	 * @param status
 	 * @return
 	 */
-	public User queryUserById(Long id);
+	public User queryUserById(Long id,Integer status);
 	
 	/**
 	 * 分页查询用户

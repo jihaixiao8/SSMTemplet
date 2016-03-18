@@ -1,5 +1,6 @@
 package com.github.demo.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.dao.DataAccessException;
 
 import com.github.demo.model.User;
@@ -13,7 +14,7 @@ public interface UserMapper {
 	 * @return
 	 * @throws DataAccessException
 	 */
-	public User findById(long id) throws DataAccessException;
+	public User findById(@Param("id") long id,@Param("status") Integer status) throws DataAccessException;
 	
 	/**
 	 * 分页查询User详情

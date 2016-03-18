@@ -58,7 +58,11 @@ public class BaseController {
 	@ResponseBody
 	public boolean update(){
 		log.info("开始插入数据");
-		User user = userService.queryUserById(7L);
+		User user = userService.queryUserById(7L,null);
+		if(user == null){
+			log.error("没有数据");
+			return false;
+		}
 		user.setStatus(0);
 		boolean result = userService.updateUser(user);
 		return result;

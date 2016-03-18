@@ -22,12 +22,12 @@ public class UserServiceImpl implements UserService{
 	private UserMapper userMapper;
 
 	@Override
-	public User queryUserById(Long id) {
+	public User queryUserById(Long id,Integer status) {
 		if(id == null){
 			logger.info("用户id为空");
 			return null;
 		}
-		return userMapper.findById(id);
+		return userMapper.findById(id,status);
 	}
 
 	@Override

@@ -8,14 +8,27 @@
 		<result column="mobile" property="mobile" jdbcType="CHAR"/>
 		<result column="type" property="type" jdbcType="BIT"/>
 		<result column="status" property="status" jdbcType="BIT"/>
-   </resultMap>
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="modified_time" property="modifiedTime" jdbcType="TIMESTAMP"/>
+   	</resultMap>
+	
+	<sql id="User_Base_Column_List">
+		t.id,t.username,t.password,t.mobile,t.type,t.status,t.create_time,t.modified_time
+	</sql>
 	
 	<select id="findById" parameterType="java.lang.Long" resultMap="userMapper">
-		select * from mo_user where id = #{id} and status = 1
+		select 
+		<include refid="User_Base_Column_List" /> 
+		from mo_user t where t.id = #{id} 
+		<if test="status != null">
+			and t.status = #{status}
+		</if>
 	</select>
 	
 	<select id="findByPage" resultMap="userMapper">
-		select * from mo_user where status = 1
+		select 
+		<include refid="User_Base_Column_List" />
+		from mo_user t where status = 1
 	</select>
 	
 	<update id="update">
