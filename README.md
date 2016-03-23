@@ -1,5 +1,8 @@
 # SSMTemplet
 
+#3.23日：
+增加数据库配置文件datasource.properties
+
 #3.18日：
 增加更新和修改操作
 
