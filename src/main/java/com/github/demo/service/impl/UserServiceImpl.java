@@ -56,5 +56,12 @@ public class UserServiceImpl implements UserService{
 		int result = userMapper.update(user);
 		return result > 0;
 	}
+
+	@Override
+	public Page<User> queryUserByCondition(User user, int pageNo, int pageSize) {
+		PageHelper.startPage(pageNo, pageSize);
+		Page<User> page = userMapper.findByCondition(user);
+		return page;
+	}
 	
 }

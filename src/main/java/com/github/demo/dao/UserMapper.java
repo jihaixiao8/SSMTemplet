@@ -17,6 +17,14 @@ public interface UserMapper {
 	public User findById(@Param("id") long id,@Param("status") Integer status) throws DataAccessException;
 	
 	/**
+	 * 根据条件查询User
+	 * @param user
+	 * @return
+	 * @throws DataAccessException
+	 */
+	public Page<User> findByCondition(@Param("user") User user) throws DataAccessException;
+	
+	/**
 	 * 分页查询User详情
 	 * @return
 	 * @throws DataAccessException

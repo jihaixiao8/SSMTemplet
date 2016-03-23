@@ -15,6 +15,15 @@ public interface UserService {
 	public User queryUserById(Long id,Integer status);
 	
 	/**
+	 * 根据条件查询用户
+	 * @param user
+	 * @param pageNo
+	 * @param pageSize
+	 * @return
+	 */
+	public Page<User> queryUserByCondition(User user,int pageNo,int pageSize);
+	
+	/**
 	 * 分页查询用户
 	 * @param pageNo  页数
 	 * @param pageSize  页大小

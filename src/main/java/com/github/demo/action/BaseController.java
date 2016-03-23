@@ -1,5 +1,7 @@
 package com.github.demo.action;
 
+import java.util.Date;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -7,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 
 
@@ -37,7 +40,10 @@ public class BaseController {
 	@ResponseBody
 	public Page<User> testJson(){
 		log.info("开始");
-		Page<User> page = userService.queryUserByPage(1,2);
+		User user = new User();
+		user.setStatus(1);
+		user.setEndTime(new Date());
+		Page<User> page = userService.queryUserByCondition(user, 1, 2);
 		return page;
 	}
 	

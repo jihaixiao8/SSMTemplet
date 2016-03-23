@@ -25,6 +25,21 @@
 		</if>
 	</select>
 	
+	<select id="findByCondition" parameterType="map" resultMap="userMapper">
+		select 
+		<include refid="User_Base_Column_List" /> 
+		from mo_user t where 1=1
+		<if test="user.status != null">
+			and t.status = #{user.status}
+		</if>
+		<if test="user.beginTime != null">
+			and t.create_time &gt; #{user.beginTime}
+		</if>
+		<if test="user.endTime != null">
+			and t.create_time &lt; #{user.endTime}
+		</if>
+	</select>
+	
 	<select id="findByPage" resultMap="userMapper">
 		select 
 		<include refid="User_Base_Column_List" />

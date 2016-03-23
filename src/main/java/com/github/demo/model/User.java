@@ -1,9 +1,13 @@
 package com.github.demo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User extends BaseQueryPO implements Serializable{
 	
+	
+	private static final long serialVersionUID = 1L;
+
 	private Long id;
 	
 	private String username;
