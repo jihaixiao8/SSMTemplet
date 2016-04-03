@@ -73,4 +73,5 @@ public class BaseController {
 		boolean result = userService.updateUser(user);
 		return result;
 	}
+
 }
