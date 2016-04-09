@@ -1,5 +1,7 @@
 package com.github.demo.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.dao.DataAccessException;
 
@@ -46,5 +48,13 @@ public interface UserMapper {
 	 * @throws DataAccessException
 	 */
 	public int insert(User user) throws DataAccessException;
+	
+	/**
+	 * 批量插入用户信息
+	 * @param users
+	 * @return
+	 * @throws DataAccessException
+	 */
+	public int batchInsert(List<User> users) throws DataAccessException;
 
 }

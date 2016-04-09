@@ -1,10 +1,13 @@
 package com.github.demo.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import com.github.demo.dao.UserMapper;
 import com.github.demo.model.User;
@@ -62,6 +65,16 @@ public class UserServiceImpl implements UserService{
 		PageHelper.startPage(pageNo, pageSize);
 		Page<User> page = userMapper.findByCondition(user);
 		return page;
+	}
+
+	@Override
+	public int addUser(List<User> users) {
+		if(CollectionUtils.isEmpty(users)){
+			logger.info("users为空，批量插入失败");
+			return -1;
+		}
+		int result = userMapper.batchInsert(users);
+		return result;
 	}
 	
 }

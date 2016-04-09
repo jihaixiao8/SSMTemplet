@@ -1,6 +1,8 @@
 package com.github.demo.service;
 
 
+import java.util.List;
+
 import com.github.demo.model.User;
 import com.github.pagehelper.Page;
 
@@ -37,6 +39,13 @@ public interface UserService {
 	 * @return  新增用户的id
 	 */
 	public Long addUser(User user);
+	
+	/**
+	 * 批量添加用户
+	 * @param users
+	 * @return
+	 */
+	public int addUser(List<User> users);
 	
 	/**
 	 * 修改用户信息
