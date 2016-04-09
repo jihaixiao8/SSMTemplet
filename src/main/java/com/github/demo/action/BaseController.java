@@ -1,22 +1,20 @@
 package com.github.demo.action;
 
+import java.io.File;
 import java.util.Date;
+import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-
-
-
-
-
-
-
+import org.springframework.web.multipart.MultipartFile;
 
 import com.github.demo.model.User;
 import com.github.demo.service.UserService;
@@ -72,6 +70,25 @@ public class BaseController {
 		user.setStatus(0);
 		boolean result = userService.updateUser(user);
 		return result;
+	}
+	
+	@RequestMapping("/upload")
+	public String uploadImage(@RequestParam(value="file") MultipartFile file
+			,HttpServletRequest request,ModelMap model){
+		String realPath = request.getSession().getServletContext().getRealPath("/upload");
+		String fileName = file.getOriginalFilename();
+		log.info("path is ",realPath);
+		File targetFile = new File(realPath, fileName);  
+		if(!targetFile.exists()){  
+		    targetFile.mkdirs();  
+		}
+        try {  
+            file.transferTo(targetFile);  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }
+        model.addAttribute("fileUrl", request.getContextPath()+"/upload/"+fileName);          
+        return "/result";  
 	}
 
 }

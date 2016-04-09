@@ -61,4 +61,13 @@
 		#{status,jdbcType=BIT})
 	</insert>
 	
+	<insert id="batchInsert" parameterType="java.util.List">
+		insert into mo_user (username,
+		password,mobile,type,status) values 
+		<foreach collection="list" item="i" index="index" open="" close="" separator=",">
+			( #{i.username},#{i.password},#{i.mobile},#{i.type},#{status})
+		</foreach>
+		on duplicate key update username VALUES(username),password VALUES(password),modified_time VALUES(modifiedTime)
+	</insert>
+	
 </mapper>
