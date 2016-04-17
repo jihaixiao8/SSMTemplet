@@ -91,4 +91,11 @@ public class BaseController {
         return "/result";  
 	}
 
+
+	@RequestMapping("test")
+	@ResponseBody
+	public void test1(){
+		return;
+	}
+
 }
