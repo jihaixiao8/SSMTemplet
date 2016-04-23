@@ -108,7 +108,7 @@ public class BaseController {
 	@RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
     public Long testRegister(){
-
+        return null;
     }
 
 
