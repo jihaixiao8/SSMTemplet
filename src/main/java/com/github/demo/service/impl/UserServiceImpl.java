@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import com.github.demo.dao.UserMapper;
@@ -41,6 +42,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
+	@Transactional
 	public Long addUser(User user) {
 		if(user == null){
 			logger.info("user为空，退出");

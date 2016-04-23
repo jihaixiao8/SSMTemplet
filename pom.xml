@@ -29,8 +29,16 @@
 		<version>${servlet.api.version}</version>
 		<scope>provided</scope>
   	</dependency>
-  	
-  	<!-- Spring Framework begin -->
+
+	  <dependency>
+		  <groupId>javax.mail</groupId>
+		  <artifactId>mail</artifactId>
+		  <version>1.4.7</version>
+	  </dependency>
+
+
+
+	  <!-- Spring Framework begin -->
   	
 	<dependency>
 		<groupId>org.springframework</groupId>

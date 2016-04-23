@@ -107,7 +107,8 @@ public class BaseController {
 
 	@RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
-    public Long testRegister(){
+    public Long testRegister(HttpServletRequest request){
+        log.info("他妈的不打印",request);
         return null;
     }
 
