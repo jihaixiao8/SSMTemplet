@@ -18,16 +18,26 @@
 	default-lazy-init="true">
 	
 	
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven  />
+
  	<context:component-scan base-package="com.github.demo.action.**" />
 		
 	<context:annotation-config />
 	
 	<!-- spring 通用视图解析器  -->
-	<bean id="commonViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<!--	<bean id="commonViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/page/" />
 		<property name="suffix" value=".jsp" />
-	</bean>	
+	</bean>-->
+
+	<!-- 更换为Spring 4.X的视图解析器 -->
+
+	<mvc:view-resolvers>
+		<mvc:jsp prefix="/WEB-INF/page/" suffix=".jsp" />
+	</mvc:view-resolvers>
+	
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 	
 	<!-- 返回json类型 -->	
 	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
