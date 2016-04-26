@@ -62,7 +62,7 @@
 	               	   <th>英雄属性</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody>				
 					<c:forEach var="listHero" items="${listHeros}">
 						<tr>
 							<td>${listHero.heroName}</td>

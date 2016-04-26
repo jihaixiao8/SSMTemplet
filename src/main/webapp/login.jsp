@@ -2,35 +2,46 @@
 <!DOCTYPE HTML>
 <html>
 <head>
- <title>广告平台</title>
-<style>														
-	body{background:url('resources/img/p_03.jpg') no-repeat top center;position:relation;}
-	form{
-		margin: 0 auto;
-	}
-</style>
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
- <script src="libs/th2w.core.js"></script>
- <script src="libs/jquery/jquery.js"></script>
- <script type="text/javascript">
-	Core.init ({
-		url : 'resources',
-		css	: ['bootstrap/css/bootstrap.min'],
-		js  : ['bootstrap/js/bootstrap.min','./js/particles.min','./js/particles','./js/app' ]
-	});
- </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>登录</title>
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/th2w.core.js"></script>
+    <script type="text/javascript">
+        Core.init({
+            url: 'resources',
+            css: ['./css/login'],
+            js: ['bootstrap/js/bootstrap.min', 'particles/particles', './js/login']
+        });
+    </script>
 </head>
-
 <body>
- <div id="particles-js" style="z-index:6;"></div>
-
- <div class="form" style="background-color: rgba(0.0.0.0.5);z-index:3;width:500px;height:500px;">
-	<form id="loginForm" action="/webapptest/confirmLogin.do" method="post" >
-        <input autocomplete="off" type="text" name="username" placeholder="用户名" required="required" autofocus="autofocus"/>
-        <input autocomplete="off" type="password" name="password" placeholder="密码" required="required"/>
-        <input type="submit" value="登录"/>
-	</form>
+<div id="particles-js" style="z-index:6;"></div>
+<div class="layout">
+    <div class="header">
+        <div class="logo" style="width: 100px;height: 50px;line-height: 50px;font-size: 40px;">LOGO</div>
+    </div>
+    <div class="login-main">
+        <div class="login-body">
+            <div style="width: 120px;height: 60px;margin: 0 auto 20px auto;font-size: 40px;">登录</div>
+            <form id="loginForm" action="/webapptest/confirmLogin.do" method="post" class="login-form">
+                <input type="text" id="username" name="username" placeholder="账号" class="top-radius">
+                <input type="text" id="password" name="password" placeholder="密码" class="bottom-radius"
+                       style="">
+                       
+            </form>
+            	
+            <!--<div class="login-form-err">用户名或密码不正确，请重新输入。 </div>-->
+            <div class="login-form-bt1">登录</div>
+            <div class="login-form-bt2">创建账号</div>
+            <div class="login-form-wd1"><a href="">忘记密码?</a></div>
+            <div class="login-form-wd2"><a href="">返回</a></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="logo" style="width: 200px;height: 20px;line-height: 40px;font-size: 20px;float: right">QQ 微信 微博 XX
+        </div>
+    </div>
 </div>
 </body>
 </html>

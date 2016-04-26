@@ -21,10 +21,10 @@ public class SendEmailUtil {
     private static final String PROTOCOL = "smtp";
 
     private static final int PORT = 25;
+    									//woshicainiao1573@163.com
+    private static final String SENDER = "woshicainiao1573@163.com";
 
-    private static final String SENDER = "***@163.com";
-
-    private static final String PASSWORD = "***";
+    private static final String PASSWORD = "daohaode5418";
 
     public static Session getSession(){
         Properties props = new Properties();
