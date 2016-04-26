@@ -1,90 +1,178 @@
-*{
-    margin:0;
-    padding:0;
-}
-body{
-    font-family:"微软雅黑","Microsoft YaHei","Times New Roman",sans-serif,Serif;
-    background-color: #02314d;
-}
-.header{
-    height:299px;
-    background-color: #c3e9ff;
-    border-bottom:1px solid #FFF;
-    text-align: center;
-}
-.header .logo{
-    font-family:"Microsoft YaHei",sans-serif;
-    font-size: 72px;
-    background-color: inherit;
-    color:#02314d;
-    margin: 0 auto;
-    padding-top:167px;
+/*样式初始化----------BEG----------*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
 }
 
-.login{
-    margin:0 auto;
-    width:652px;
-    height:333px;
-    background-color: #02314d;
+body, button, input, select, textarea {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
 }
 
-.login .left{
-    display:inline-block;
-    width:12px;
-    height:333px;
-    background: url(../img/bg_l.png) no-repeat ;
+h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+    font-size: 100%;
 }
-.login .center{
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    border: 0;
+}
+
+/*内容----------BEG----------*/
+html, body {
+    height: 100%;
+}
+
+body {
     position: relative;
-    display:inline-block;
-    width:628px;
-    height:333px;
-    background: url(../img/bg_c.png) repeat-x ;
-}
-.login .right{
-    display:inline-block;
-    width:12px;
-    height:333px;
-    background: url(../img/bg_r.png) no-repeat ;
+    background: rgb(33, 33, 33) url("../img/p_01.jpg") center;
+    background-size: cover;
+    color: #ccc;
+    font: 12px/1.5 Arial, 'Droid Sans', 'Hiragino Sans GB', 'Microsoft YaHei';
 }
 
-#loginForm {
+.header {
     position: absolute;
-    top:70px;
-    left:50%;
-    margin-left:-110px;
-    font-size: 18px;
-    font-family:"Microsoft YaHei",sans-serif;
-    color:#666;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(10, 10, 10, 0.15);
 }
 
-#loginForm input {
-    width:220px;
-    height: 45px;
+.footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    height: 40px;;
+    background-color: rgba(10, 10, 10, 0.15);
+}
+
+.login-main {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 380px;
+    margin-left: -190px
+}
+
+.login-body {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgba(50, 50, 50, 0.6);
+    padding: 20px 40px 60px 40px;
+    position: relative;
+}
+
+.login-form {
+    margin-bottom: 20px
+}
+
+.login-form input {
     display: block;
-    border:0;
-    border-radius:5px;
-    padding:0 15px;
+    margin: 0;
+    outline: none;
+    width: 300px;
+    padding: 11px 10px 11px 13px;
+    border: 1px solid #FFFFFF;
+    border-bottom: 1px solid rgb(227, 227, 227);
+    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.95);
+    font-size: 12px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-#loginForm input[type=password] {
-    margin-top:16px;
+.top-radius {
+    border-radius: 2px 2px 0 0;
 }
 
-#loginForm input[type=submit] {
-    margin-top:26px;
-    padding:0;
-    color:#FFF;
-    background: url(../img/btn_submit.png) no-repeat ;
+.bottom-radius {
+    border-radius: 0 0 2px 2px;
 }
 
-#msg {
-    display: none;
-    position: absolute;
-    bottom:30px;
-    left:50%;
-    margin-left:-40px;
-    font-size: 18px;
-    font-family:"Microsoft YaHei",sans-serif;
-    color:#ff5c69;
+.login-form-bt1 {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 38px;
+    background-color: rgb(70, 175, 95);
+    background-color: rgba(70, 175, 95, 0.9);
+    color: #fff;
+    border-radius: 2px;
+    width: 300px;
+    height: 38px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.login-form-bt1:focus, .login-form-bt1:hover {
+    background-color: rgb(90, 225, 125);
+    background-color: rgba(90, 225, 125, 0.9);
+}
+
+.login-form-bt2 {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 38px;
+    background-color: rgb(41, 119, 186);
+    background-color: rgba(41, 119, 186, 0.9);
+    color: #fff;
+    border-radius: 2px;
+    width: 300px;
+    height: 38px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.login-form-bt2:focus, .login-form-bt2:hover {
+    background-color: rgb(61, 139, 226);
+    background-color: rgba(61, 139, 226, 0.9);
+}
+
+.login-form-wd1 {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.login-form-wd1 a {
+    margin-left: 3px;
+    margin-top: 20px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.login-form-wd2 {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.login-form-wd2 a {
+    margin-right: 3px;
+    margin-top: 20px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.login-form-err {
+    margin-bottom: 5px;
+    color: #ec3627;
 }

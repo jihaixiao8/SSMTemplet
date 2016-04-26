@@ -24,17 +24,17 @@
 		
 	<context:annotation-config />
 	
-	<!-- spring 通用视图解析器  -->
-<!--	<bean id="commonViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<!-- 	spring 通用视图解析器  -->
+	<bean id="commonViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/page/" />
 		<property name="suffix" value=".jsp" />
-	</bean>-->
+	</bean>
 
 	<!-- 更换为Spring 4.X的视图解析器 -->
 
-	<mvc:view-resolvers>
+<!-- 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/page/" suffix=".jsp" />
-	</mvc:view-resolvers>
+	</mvc:view-resolvers> -->
 	
 	<!-- 支持上传文件 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
