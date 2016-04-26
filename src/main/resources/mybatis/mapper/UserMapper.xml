@@ -70,4 +70,9 @@
 		on duplicate key update username VALUES(username),password VALUES(password),modified_time VALUES(modifiedTime)
 	</insert>
 	
+	<select id="fingLogin" resultType="java.lang.Integer">
+		select count(*)
+		from mo_user t where username = #{username} and password = #{password}
+	</select>
+	
 </mapper>

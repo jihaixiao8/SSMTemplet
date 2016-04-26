@@ -11,6 +11,13 @@ import com.github.pagehelper.Page;
 public interface UserMapper {
 	
 	/**
+	 * 根据用户名 密码查询用户是否存在
+	 * @param id
+	 * @param password
+	 * @return
+	 */
+	public int fingLogin(@Param("username") String username, @Param("password") String password);
+	/**
 	 * 根据id查询User
 	 * @param id
 	 * @return
