@@ -1,0 +1,38 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   pom.xml
+#
+# Changes not staged for commit:
+#	modified:   src/main/java/com/github/demo/dao/UserMapper.java
+#	modified:   src/main/resources/mybatis/mapper/UserMapper.xml
+#	modified:   src/main/resources/spring.xml
+#	modified:   src/main/webapp/WEB-INF/web.xml
+#
+# Untracked files:
+#	.classpath
+#	.gitignore
+#	.project
+#	.settings/
+#	src/main/java/com/github/demo/action/HeroController.java
+#	src/main/java/com/github/demo/action/LoginController.java
+#	src/main/java/com/github/demo/dao/HeroMapper.java
+#	src/main/java/com/github/demo/service/HeroService.java
+#	src/main/java/com/github/demo/service/LoginService.java
+#	src/main/java/com/github/demo/service/impl/HeroServiceImpl.java
+#	src/main/java/com/github/demo/service/impl/LoginServiceImpl.java
+#	src/main/java/com/github/demo/vo/
+#	src/main/resources/mybatis/mapper/HeroMapper.xml
+#	src/main/webapp/WEB-INF/page/hero/
+#	src/main/webapp/WEB-INF/page/homepage/
+#	src/main/webapp/WEB-INF/page/index.jsp
+#	src/main/webapp/libs/
+#	src/main/webapp/login.jsp
+#	src/main/webapp/resources/
+#
+
