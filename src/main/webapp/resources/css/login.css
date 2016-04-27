@@ -32,17 +32,34 @@ img {
     border: 0;
 }
 
-/*内容----------BEG----------*/
+/*登录----------BEG----------*/
 html, body {
     height: 100%;
 }
 
 body {
     position: relative;
-    background: rgb(33, 33, 33) url("../img/p_01.jpg") center;
+    background: rgb(33, 33, 33) center;
     background-size: cover;
     color: #ccc;
     font: 12px/1.5 Arial, 'Droid Sans', 'Hiragino Sans GB', 'Microsoft YaHei';
+}
+
+a:link {
+text-decoration: none;
+}
+a:visited {
+text-decoration: none;
+}
+ a:hover {
+text-decoration: none;
+} 
+a:active {
+text-decoration: none;
+}
+
+.layout {
+    z-index: 1000;
 }
 
 .header {
@@ -105,6 +122,10 @@ body {
 
 .bottom-radius {
     border-radius: 0 0 2px 2px;
+}
+
+.all-radius {
+    border-radius: 2px 2px 2px 2px;
 }
 
 .login-form-bt1 {
@@ -175,4 +196,26 @@ body {
 .login-form-err {
     margin-bottom: 5px;
     color: #ec3627;
+}
+
+/*注册----------BEG----------*/
+.register-title {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-form-label {
+    height: 37px;
+    line-height: 37px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+/*忘记----------BEG----------*/
+.login-form-box {
+    margin-top: 20px;
+    color: #FFFFFF;
 }

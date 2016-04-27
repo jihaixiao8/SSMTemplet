@@ -1,4 +1,6 @@
-<%@ page pageEncoding="utf-8"%>  
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,7 +13,7 @@
         Core.init({
             url: 'resources',
             css: ['./css/login'],
-            js: ['bootstrap/js/bootstrap.min', 'particles/particles', './js/login']
+            js: ['bootstrap/js/bootstrap.min', 'particles/particles', './js/login','./js/iface/loginForm']
         });
     </script>
 </head>
@@ -23,17 +25,16 @@
     </div>
     <div class="login-main">
         <div class="login-body">
-            <div style="width: 120px;height: 60px;margin: 0 auto 20px auto;font-size: 40px;">登录</div>
+            <div style="width: 120px;height: 60px;margin: 0 auto 20px auto;font-size: 40px;">MAX+</div>
             <form id="loginForm" action="/webapptest/confirmLogin.do" method="post" class="login-form">
                 <input type="text" id="username" name="username" placeholder="账号" class="top-radius">
-                <input type="text" id="password" name="password" placeholder="密码" class="bottom-radius"
+                <input type="password" id="password" name="password" placeholder="密码" class="bottom-radius"
                        style="">
-                       
             </form>
             	
-            <!--<div class="login-form-err">用户名或密码不正确，请重新输入。 </div>-->
-            <div class="login-form-bt1">登录</div>
-            <div class="login-form-bt2">创建账号</div>
+            <div class="login-form-bt1" id="login">登录</div>
+            <div class="login-form-err">${errmsg}</div>
+            <a href="/webapptest/register.jsp"><div class="login-form-bt2">创建账号</div></a>
             <div class="login-form-wd1"><a href="">忘记密码?</a></div>
             <div class="login-form-wd2"><a href="">返回</a></div>
         </div>
@@ -45,3 +46,4 @@
 </div>
 </body>
 </html>
+
