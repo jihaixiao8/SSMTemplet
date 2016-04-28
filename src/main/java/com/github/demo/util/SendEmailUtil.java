@@ -26,7 +26,9 @@ public class SendEmailUtil {
 
     private static final String PASSWORD = "daohaode5418";
 
-    public static Session getSession(){
+    private SendEmailUtil(){}
+
+    private static Session getSession(){
         Properties props = new Properties();
         props.put("mail.smtp.host", HOST);//设置服务器地址
         props.put("mail.store.protocol" , PROTOCOL);//设置协议
@@ -39,8 +41,7 @@ public class SendEmailUtil {
                 return new PasswordAuthentication(SENDER, PASSWORD);
             }
         };
-        Session session = Session.getDefaultInstance(props,authenticator);
-        return session;
+        return Session.getDefaultInstance(props,authenticator);
     }
 
     public static void send(String receiver,String content){
