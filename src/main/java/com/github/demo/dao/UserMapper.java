@@ -11,12 +11,19 @@ import com.github.pagehelper.Page;
 public interface UserMapper {
 	
 	/**
-	 * 根据用户名 密码查询用户是否存在
+	 * 登录
 	 * @param id
 	 * @param password
 	 * @return
 	 */
 	public int fingLogin(@Param("username") String username, @Param("password") String password);
+	
+	/**
+	 * 根据用户名查询用户是否存在
+	 * @param username
+	 * @return
+	 */
+	public int loginUser(@Param("username") String username);
 	/**
 	 * 根据id查询User
 	 * @param id
@@ -63,5 +70,12 @@ public interface UserMapper {
 	 * @throws DataAccessException
 	 */
 	public int batchInsert(List<User> users) throws DataAccessException;
+	
+	/**
+	 * 根据用户名查该用户
+	 * @param username
+	 * @return
+	 */
+	public User findUserByUserName(@Param("username") String username);
 
 }

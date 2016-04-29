@@ -47,8 +47,7 @@
 	</select>
 	
 	<update id="update">
-		update mo_user set username = #{username},password = #{password},
-		mobile = #{mobile},type = #{type},status = #{status} where id = #{id}
+		update mo_user set status = #{status} where username = #{username}
 	</update>
 	
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
@@ -73,6 +72,17 @@
 	<select id="fingLogin" resultType="java.lang.Integer">
 		select count(*)
 		from mo_user t where username = #{username} and password = #{password}
+	</select>
+	
+	<select id="loginUser" resultType="java.lang.Integer">
+		select count(*)
+		from mo_user t where username = #{username}
+	</select>
+	
+	<select id="findUserByUserName" resultMap="userMapper">
+		select 
+		<include refid="User_Base_Column_List" />
+		from mo_user t where username = #{username}
 	</select>
 	
 </mapper>
