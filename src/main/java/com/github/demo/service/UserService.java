@@ -54,4 +54,11 @@ public interface UserService {
 	 */
 	public boolean updateUser(User user);
 	
+	/**
+	 * 根据用户名查找
+	 * @param username
+	 * @return
+	 */
+	public User findUserByUserName(String username);
+	
 }

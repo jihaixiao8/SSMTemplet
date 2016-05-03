@@ -78,5 +78,10 @@ public class UserServiceImpl implements UserService{
 		int result = userMapper.batchInsert(users);
 		return result;
 	}
+
+	@Override
+	public User findUserByUserName(String username) {
+		return userMapper.findUserByUserName(username);
+	}
 	
 }

@@ -30,4 +30,19 @@ public class LoginServiceImpl implements LoginService{
 		userMapper.insert(user);
 	}
 
+	public void updateStatus(String username, int statusNew) {
+		User user = new User();
+		user.setUsername(username);
+		user.setStatus(statusNew);
+		userMapper.update(user);
+	}
+
+	public boolean loginUser(String username) {
+		int loginResult = userMapper.loginUser(username);
+		if(loginResult==0){
+			return true;
+		}
+		return false;
+	}
+
 }
